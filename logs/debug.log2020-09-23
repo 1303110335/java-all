@@ -1,0 +1,4 @@
+[ERROR] 2020-09-23 15:54:16,717(4391) --> [testMysqlThread] com.redis.example.demo.service.JdbcServiceTest.lambda$execute$1(JdbcServiceTest.java:50): execute  
+[WARN ] 2020-09-23 15:54:16,720(4394) --> [testMysqlThread] com.redis.example.demo.service.JdbcServiceTest.lambda$execute$1(JdbcServiceTest.java:51): execute  
+[WARN ] 2020-09-23 15:58:52,400(4757) --> [testMysqlThread] com.redis.example.demo.service.JdbcServiceTest.lambda$execute$1(JdbcServiceTest.java:52): 执行execute  
+[WARN ] 2020-09-23 16:01:57,557(4375) --> [testMysqlThread] com.redis.example.demo.service.JdbcServiceTest.lambda$execute$1(JdbcServiceTest.java:52): 执行execute , threadName = testMysqlThread  

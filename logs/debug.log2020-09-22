@@ -1,0 +1,2 @@
+[WARN ] 2020-09-22 17:01:50,073(2) --> [main] com.redis.example.demo.controller.TestLog.main(TestLog.java:21): this is warn  
+[ERROR] 2020-09-22 17:01:50,074(3) --> [main] com.redis.example.demo.controller.TestLog.main(TestLog.java:22): this is err  

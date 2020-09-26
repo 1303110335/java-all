@@ -1,0 +1,680 @@
+[WARN ] 2020-09-25 10:14:48,839(3281) --> [main] org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:559): Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisPoolConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"  
+[ERROR] 2020-09-25 10:14:48,908(3350) --> [main] org.springframework.boot.SpringApplication.reportFailure(SpringApplication.java:837): Application run failed  
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisPoolConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.redis.example.demo.DemoApplication.main(DemoApplication.java:12)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:918)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1248)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 18 more
+[WARN ] 2020-09-25 10:15:43,508(2797) --> [main] org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:559): Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisPoolConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"  
+[ERROR] 2020-09-25 10:15:43,560(2849) --> [main] org.springframework.boot.SpringApplication.reportFailure(SpringApplication.java:837): Application run failed  
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisPoolConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.redis.example.demo.DemoApplication.main(DemoApplication.java:12)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:918)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1248)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 18 more
+[WARN ] 2020-09-25 10:16:27,013(2249) --> [main] org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:559): Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisPoolConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"  
+[ERROR] 2020-09-25 10:16:27,086(2322) --> [main] org.springframework.boot.SpringApplication.reportFailure(SpringApplication.java:837): Application run failed  
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisPoolConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.redis.example.demo.DemoApplication.main(DemoApplication.java:12)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:918)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1248)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 18 more
+[WARN ] 2020-09-25 10:16:44,603(2254) --> [main] org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:559): Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisPoolConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"  
+[ERROR] 2020-09-25 10:16:44,683(2334) --> [main] org.springframework.boot.SpringApplication.reportFailure(SpringApplication.java:837): Application run failed  
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jedisPoolConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.redis.example.demo.DemoApplication.main(DemoApplication.java:12)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'bianque.redis.conf' in value "${bianque.redis.conf}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:918)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1248)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 18 more
+[WARN ] 2020-09-25 10:18:29,131(3119) --> [main] org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:559): Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSource': Unsatisfied dependency expressed through field 'basicProperties'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/jdbc/datasource/embedded/EmbeddedDatabaseType  
+[ERROR] 2020-09-25 10:18:29,184(3172) --> [main] org.springframework.boot.SpringApplication.reportFailure(SpringApplication.java:837): Application run failed  
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSource': Unsatisfied dependency expressed through field 'basicProperties'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/jdbc/datasource/embedded/EmbeddedDatabaseType
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.redis.example.demo.DemoApplication.main(DemoApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/jdbc/datasource/embedded/EmbeddedDatabaseType
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 20 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/jdbc/datasource/embedded/EmbeddedDatabaseType
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:217)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1310)
+	... 31 more
+Caused by: java.lang.NoClassDefFoundError: org/springframework/jdbc/datasource/embedded/EmbeddedDatabaseType
+	at org.springframework.boot.jdbc.EmbeddedDatabaseConnection.<clinit>(EmbeddedDatabaseConnection.java:51)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.<init>(DataSourceProperties.java:153)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:204)
+	... 33 more
+Caused by: java.lang.ClassNotFoundException: org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 40 more
+[WARN ] 2020-09-25 14:24:14,269(5947) --> [testMysqlThread] com.redis.example.demo.service.JdbcServiceTest.lambda$execute$1(JdbcServiceTest.java:50): result = {"success":true}  
+[WARN ] 2020-09-25 14:24:14,271(5949) --> [testMysqlThread] com.redis.example.demo.service.JdbcServiceTest.lambda$execute$1(JdbcServiceTest.java:52): 执行execute , threadName = testMysqlThread  
+[WARN ] 2020-09-25 14:28:49,055(5846) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 14:28:49,055(5846) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[WARN ] 2020-09-25 14:42:59,050(6249) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[WARN ] 2020-09-25 14:42:59,051(6250) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 14:44:56,334(5702) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[WARN ] 2020-09-25 14:44:56,334(5702) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[ERROR] 2020-09-25 14:44:56,339(5707) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:101): execProcedure >> 执行存储过程失败 >> proc = p  
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.throwConnectionClosedException(ConnectionImpl.java:1192)
+	at com.mysql.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:1187)
+	at com.mysql.jdbc.ConnectionImpl.versionMeetsMinimum(ConnectionImpl.java:5202)
+	at com.mysql.jdbc.ConnectionImpl.prepareCall(ConnectionImpl.java:3963)
+	at com.mysql.jdbc.ConnectionImpl.prepareCall(ConnectionImpl.java:3944)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:82)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 14:44:56,339(5707) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:101): execProcedure >> 执行存储过程失败 >> proc = p  
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.throwConnectionClosedException(ConnectionImpl.java:1192)
+	at com.mysql.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:1187)
+	at com.mysql.jdbc.ConnectionImpl.versionMeetsMinimum(ConnectionImpl.java:5202)
+	at com.mysql.jdbc.ConnectionImpl.prepareCall(ConnectionImpl.java:3963)
+	at com.mysql.jdbc.ConnectionImpl.prepareCall(ConnectionImpl.java:3944)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:82)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[WARN ] 2020-09-25 14:44:56,342(5710) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"errMsg":"No operations allowed after connection closed.","success":false}, threadName = testMysqlThread3  
+[WARN ] 2020-09-25 14:44:56,342(5710) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"errMsg":"No operations allowed after connection closed.","success":false}, threadName = testMysqlThread2  
+[WARN ] 2020-09-25 14:44:56,424(5792) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread5  
+[ERROR] 2020-09-25 14:44:56,424(5792) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:101): execProcedure >> 执行存储过程失败 >> proc = p  
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: No operations allowed after connection closed.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.throwConnectionClosedException(ConnectionImpl.java:1192)
+	at com.mysql.jdbc.ConnectionImpl.checkClosed(ConnectionImpl.java:1187)
+	at com.mysql.jdbc.ConnectionImpl.versionMeetsMinimum(ConnectionImpl.java:5202)
+	at com.mysql.jdbc.ConnectionImpl.prepareCall(ConnectionImpl.java:3963)
+	at com.mysql.jdbc.ConnectionImpl.prepareCall(ConnectionImpl.java:3944)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:82)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[WARN ] 2020-09-25 14:44:56,425(5793) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"errMsg":"No operations allowed after connection closed.","success":false}, threadName = testMysqlThread6  
+[WARN ] 2020-09-25 14:44:56,456(5824) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread4  
+[WARN ] 2020-09-25 14:44:56,456(5824) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread7  
+[WARN ] 2020-09-25 14:44:56,536(5904) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread8  
+[WARN ] 2020-09-25 14:44:56,537(5905) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread9  
+[WARN ] 2020-09-25 14:51:48,082(6290) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[WARN ] 2020-09-25 14:51:48,082(6290) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 14:51:48,100(6308) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread2  
+[WARN ] 2020-09-25 14:51:48,100(6308) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread3  
+[WARN ] 2020-09-25 14:51:48,119(6327) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread4  
+[WARN ] 2020-09-25 14:51:48,120(6328) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread5  
+[WARN ] 2020-09-25 14:51:48,138(6346) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread7  
+[WARN ] 2020-09-25 14:51:48,141(6349) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread6  
+[WARN ] 2020-09-25 14:51:48,158(6366) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread8  
+[WARN ] 2020-09-25 14:51:48,161(6369) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread9  
+[WARN ] 2020-09-25 14:53:24,053(5704) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[WARN ] 2020-09-25 14:53:24,053(5704) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 14:53:24,071(5722) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread2  
+[WARN ] 2020-09-25 14:53:24,083(5734) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread3  
+[WARN ] 2020-09-25 14:53:24,086(5737) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread4  
+[WARN ] 2020-09-25 14:53:24,098(5749) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread5  
+[WARN ] 2020-09-25 14:53:24,098(5749) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread6  
+[WARN ] 2020-09-25 14:53:24,110(5761) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread8  
+[WARN ] 2020-09-25 14:53:24,120(5771) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread7  
+[WARN ] 2020-09-25 14:53:24,123(5774) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread9  
+[WARN ] 2020-09-25 14:54:52,746(10262) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[WARN ] 2020-09-25 14:54:52,746(10262) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 14:54:53,773(11289) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread2  
+[WARN ] 2020-09-25 14:54:53,775(11291) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread3  
+[WARN ] 2020-09-25 14:54:54,794(12310) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread4  
+[WARN ] 2020-09-25 14:54:54,797(12313) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread5  
+[WARN ] 2020-09-25 15:01:42,801(6724) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 15:01:42,801(6724) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[WARN ] 2020-09-25 15:01:43,833(7756) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread2  
+[WARN ] 2020-09-25 15:01:43,834(7757) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread3  
+[WARN ] 2020-09-25 15:01:44,854(8777) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread5  
+[WARN ] 2020-09-25 15:01:44,854(8777) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread4  
+[WARN ] 2020-09-25 15:03:07,737(6246) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[WARN ] 2020-09-25 15:03:07,737(6246) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 15:03:08,765(7274) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread3  
+[WARN ] 2020-09-25 15:03:08,769(7278) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread2  
+[WARN ] 2020-09-25 15:03:09,787(8296) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread4  
+[WARN ] 2020-09-25 15:03:09,787(8296) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread5  
+[WARN ] 2020-09-25 15:03:10,807(9316) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread7  
+[WARN ] 2020-09-25 15:03:10,809(9318) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread6  
+[WARN ] 2020-09-25 15:03:11,831(10340) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread9  
+[WARN ] 2020-09-25 15:03:11,831(10340) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread8  
+[ERROR] 2020-09-25 15:06:53,965(5939) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:149): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:143)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:101)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:06:53,972(5946) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:149): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:143)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:101)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:06:53,970(5944) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:149): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:143)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:101)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:06:53,970(5944) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:149): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:143)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:101)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:06:53,972(5946) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:149): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:143)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:101)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:06:53,975(5949) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:149): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:143)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:101)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:06:53,978(5952) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:149): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:143)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:101)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:06:53,982(5956) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:149): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:143)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:101)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[WARN ] 2020-09-25 15:06:55,158(7132) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 15:06:55,158(7132) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[ERROR] 2020-09-25 15:10:30,093(4955) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:152): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:146)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:104)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:10:30,095(4957) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:152): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:146)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:104)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:10:30,094(4956) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:152): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:146)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:104)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:10:30,094(4956) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:152): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:146)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:104)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:10:30,093(4955) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:152): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:146)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:104)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:10:30,093(4955) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:152): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:146)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:104)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:10:30,093(4955) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:152): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:146)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:104)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2020-09-25 15:10:30,093(4955) --> [testMysqlThread] com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:152): getConnection >> 数据库连接异常   
+java.lang.RuntimeException: 数据库连接池为空
+	at com.redis.example.demo.service.JdbcService.getConnection(JdbcService.java:146)
+	at com.redis.example.demo.service.JdbcService.execProcedure(JdbcService.java:104)
+	at com.redis.example.demo.threads.ProcThread.run(ProcThread.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[WARN ] 2020-09-25 15:10:31,259(6121) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 15:10:31,259(6121) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[WARN ] 2020-09-25 15:11:17,725(6096) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 15:11:17,725(6096) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[WARN ] 2020-09-25 15:11:18,666(7037) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread2  
+[WARN ] 2020-09-25 15:11:18,667(7038) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread3  
+[WARN ] 2020-09-25 15:11:19,686(8057) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread4  
+[WARN ] 2020-09-25 15:11:19,686(8057) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread5  
+[WARN ] 2020-09-25 15:11:20,704(9075) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread6  
+[WARN ] 2020-09-25 15:11:20,706(9077) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread7  
+[WARN ] 2020-09-25 15:11:21,725(10096) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread9  
+[WARN ] 2020-09-25 15:11:21,726(10097) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread8  
+[WARN ] 2020-09-25 15:18:37,589(3610) --> [main] org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:559): Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcService': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Queue full  
+[ERROR] 2020-09-25 15:18:37,631(3652) --> [main] org.springframework.boot.SpringApplication.reportFailure(SpringApplication.java:837): Application run failed  
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcService': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Queue full
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:415)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:743)
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:742)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.util.Optional.orElseGet(Optional.java:267)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: java.lang.IllegalStateException: Queue full
+	at java.util.AbstractQueue.add(AbstractQueue.java:98)
+	at java.util.concurrent.ArrayBlockingQueue.add(ArrayBlockingQueue.java:312)
+	at com.redis.example.demo.service.JdbcService.init(JdbcService.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
+	... 81 more
+[ERROR] 2020-09-25 15:18:37,636(3657) --> [main] org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248): Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@69e153c5] to prepare test instance [com.redis.example.demo.service.JdbcServiceTest@58399d82]  
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:341)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:346)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:341)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:743)
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:742)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:340)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:263)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:256)
+	at java.util.Optional.orElseGet(Optional.java:267)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:255)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:108)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:107)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:71)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcService': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Queue full
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:415)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 63 more
+Caused by: java.lang.IllegalStateException: Queue full
+	at java.util.AbstractQueue.add(AbstractQueue.java:98)
+	at java.util.concurrent.ArrayBlockingQueue.add(ArrayBlockingQueue.java:312)
+	at com.redis.example.demo.service.JdbcService.init(JdbcService.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
+	... 81 more
+[WARN ] 2020-09-25 15:19:07,991(6500) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread3  
+[WARN ] 2020-09-25 15:19:07,994(6503) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 15:19:07,992(6501) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread2  
+[WARN ] 2020-09-25 15:19:07,991(6500) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
+[WARN ] 2020-09-25 15:19:08,889(7398) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread4  
+[WARN ] 2020-09-25 15:19:08,897(7406) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread5  
+[WARN ] 2020-09-25 15:19:08,899(7408) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread6  
+[WARN ] 2020-09-25 15:19:08,905(7414) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread7  
+[WARN ] 2020-09-25 15:19:09,907(8416) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread8  
+[WARN ] 2020-09-25 15:19:09,916(8425) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread9  
+[WARN ] 2020-09-25 15:25:21,887(7289) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread1  
+[WARN ] 2020-09-25 15:25:21,890(7292) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread4  
+[WARN ] 2020-09-25 15:25:21,890(7292) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread8  
+[WARN ] 2020-09-25 15:25:21,889(7291) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread2  
+[WARN ] 2020-09-25 15:25:21,887(7289) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread9  
+[WARN ] 2020-09-25 15:25:21,888(7290) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread7  
+[WARN ] 2020-09-25 15:25:21,888(7290) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread6  
+[WARN ] 2020-09-25 15:25:21,893(7295) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread3  
+[WARN ] 2020-09-25 15:25:21,893(7295) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread5  
+[WARN ] 2020-09-25 15:25:21,892(7294) --> [testMysqlThread] com.redis.example.demo.threads.ProcThread.run(ProcThread.java:34): result = {"success":true}, threadName = testMysqlThread0  
