@@ -5,6 +5,7 @@
 package com.redis.example.demo.druid;
 
 import com.redis.example.demo.druid.util.DruidUtil;
+import com.redis.example.demo.druid.util.DruidUtil2;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Connection;
@@ -40,6 +41,7 @@ public class JdbcTemplate {
                     pStatement.setObject(i + 1, arguments[i]);
                 }
             }
+            log.info("{} save {}", Thread.currentThread().getName(), arguments);
             pStatement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -56,7 +58,7 @@ public class JdbcTemplate {
      * @return 返回数据库查询结果集
      */
     public static <T> T query(String sql, IResultSetHandler<T> handler, Object... arguments) {
-        Connection connection = DruidUtil.getConnection();
+        Connection connection = DruidUtil2.getConnection();
         PreparedStatement pStatement = null;
         ResultSet rSet = null;
         try {
@@ -71,7 +73,7 @@ public class JdbcTemplate {
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
-            DruidUtil.releaseSqlConnection(rSet, pStatement, connection);
+            DruidUtil2.releaseSqlConnection(rSet, pStatement, connection);
         }
         return null;
     }

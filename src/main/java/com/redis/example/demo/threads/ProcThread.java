@@ -31,7 +31,15 @@ public class ProcThread implements Runnable {
 
     @Override
     public void run() {
-        ResponseWrapper<String> responseWrapper = jdbcService.execProcedure(new Date(), "p", 15);
-        log.warn("result = {}, threadName = {}", JSON.toJSONString(responseWrapper), Thread.currentThread().getName() + num);
+        //ResponseWrapper<String> responseWrapper = jdbcService.execProcedure(new Date(), "p", 15);
+//        log.warn("result = {}, threadName = {}", JSON.toJSONString(responseWrapper), Thread.currentThread().getName() + num);
+
+        try {
+            System.out.println(Thread.currentThread().getName() + "开始运行");
+            Thread.sleep(1000);
+            System.out.println(Thread.currentThread().getName() + "结束运行");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

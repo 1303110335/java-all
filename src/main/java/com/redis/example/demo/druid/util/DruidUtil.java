@@ -54,7 +54,7 @@ public class DruidUtil {
     public static Connection getConnection() {
         try {
             Connection connection = dataSource.getConnection();
-            log.info("connection = {}", connection);
+            log.info("{} connection = {}", Thread.currentThread().getName(), connection);
             return connection;
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -69,7 +69,7 @@ public class DruidUtil {
      * @param connection 数据库连接对象
      */
     public static void releaseSqlConnection(ResultSet rSet, PreparedStatement pStatement, Connection connection) {
-        log.info("releaseSqlConnection >> connection = {}", connection);
+        log.info("{} releaseSqlConnection >> connection = {}", Thread.currentThread().getName(), connection);
         try {
             if (rSet != null) {
                 rSet.close();

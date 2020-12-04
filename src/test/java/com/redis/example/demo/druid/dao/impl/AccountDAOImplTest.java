@@ -3,6 +3,7 @@ package com.redis.example.demo.druid.dao.impl;
 import com.redis.example.demo.druid.domain.Account;
 import com.redis.example.demo.threads.MyThread;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.StopWatch;
 
@@ -22,8 +23,8 @@ class AccountDAOImplTest {
 
     @Test
     public void testMultiThreadSave() {
-        ExecutorService executorService = Executors.newFixedThreadPool(2);
-        for (int i =0; i < 2; i++) {
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        for (int i =0; i < 5; i++) {
             executorService.execute(new MyThread(i));
         }
         try {
@@ -46,14 +47,18 @@ class AccountDAOImplTest {
 
     @Test
     public void testGet() {
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start();
-        for (int i = 0; i < 10; i++) {
-            Account account = new AccountDAOImpl().get(1L);
-            System.out.println(account);
-        }
-        stopWatch.stop();
-        System.out.println("getTotalTimeSeconds = " + stopWatch.getTotalTimeSeconds());
+//        StopWatch stopWatch = new StopWatch();
+//        stopWatch.start();
+//        for (int i = 0; i < 10; i++) {
+//            Account account = new AccountDAOImpl().get(1L);
+//            System.out.println(account);
+//        }
+//        stopWatch.stop();
+//        System.out.println("getTotalTimeSeconds = " + stopWatch.getTotalTimeSeconds());
+
+
+        Account account = new AccountDAOImpl().get(1L);
+        Assert.assertNotNull(account);
     }
 
     @Test

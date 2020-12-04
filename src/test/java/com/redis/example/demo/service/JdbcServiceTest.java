@@ -22,15 +22,21 @@ import java.util.concurrent.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
-@RunWith(SpringRunner.class)
+//@SpringBootTest
+//@RunWith(SpringRunner.class)
 @Slf4j
 class JdbcServiceTest {
 
     @Resource
     private JdbcServicePool jdbcService;
 
+
     /**
+     *
+     * 一般我们创建的多线程都是非守护线程.
+     * 但是也有例外,例如在junit环境中 创建的多线程都变成了守护线程模式.
+     * 在 main 中创建的多线程是非守护线程模式,所以只要子线程未执行结束, main线程会处于等待状态 ,这是程序进程也不会结束.
+     *
      * 使用同一个连接 1.413322192s 1.651044038s 1.854567828s
      * 不使用同一个连接 6.786933157s
      */
