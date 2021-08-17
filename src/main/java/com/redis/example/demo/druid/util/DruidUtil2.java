@@ -6,6 +6,7 @@ package com.redis.example.demo.druid.util;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.sql.DataSource;
 import java.io.InputStream;
@@ -20,6 +21,7 @@ import java.util.Properties;
  * @author xuleyan
  * @version DruidUtil.java, v 0.1 2020-09-24 10:03 下午
  */
+@Slf4j
 public class DruidUtil2 {
 
     /**
@@ -49,6 +51,7 @@ public class DruidUtil2 {
             druidDataSource.setMaxWait(8000);
             druidDataSource.setPoolPreparedStatements(true);
             druidDataSource.setMaxPoolPreparedStatementPerConnectionSize(10);
+            log.info("数据库加载成功");
         } catch (Exception e) {
             e.printStackTrace();
         }

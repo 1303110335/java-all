@@ -23,7 +23,7 @@ import java.util.concurrent.BlockingQueue;
  * @author xuleyan
  * @version JdbcService.java, v 0.1 2020-09-15 3:01 下午
  */
-@Service
+//@Service
 @Slf4j
 public class JdbcServicePool {
 

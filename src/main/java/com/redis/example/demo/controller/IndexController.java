@@ -40,6 +40,15 @@ public class IndexController {
     @Resource
     private Executor testExecutor;
 
+    @RequestMapping("/test-log")
+    public void testLog() {
+        log.info("this is info");
+        log.warn("this is warn");
+        log.error("this is err");
+        log.debug("this is debug");
+        System.out.println("log finish");
+    }
+
     /**
      * 1s
      */
@@ -63,7 +72,7 @@ public class IndexController {
         stopWatch.start();
         for (int i = 1; i <= 1000; i++) {
             String name = "吴洋" + i;
-            new AccountDAOImpl().save(new Account(null, name, 25, "1412341234", "江西"));
+            new AccountDAOImpl().save(new Account(null, name, 25, "1412341234", "江西", 0));
         }
         stopWatch.stop();
         log.info("耗时：{}ms", stopWatch.getTotalTimeMillis());
@@ -126,5 +135,4 @@ public class IndexController {
         System.out.println(file.getOriginalFilename());
         return "OK";
     }
-
 }

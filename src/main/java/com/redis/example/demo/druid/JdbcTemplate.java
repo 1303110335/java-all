@@ -31,7 +31,7 @@ public class JdbcTemplate {
      * @param sql 执行操作的 SQL 语句
      * @param arguments SQL 语句参数
      */
-    public static void update(String sql, Object... arguments) {
+    public static int update(String sql, Object... arguments) {
         Connection connection = DruidUtil.getConnection();
         PreparedStatement pStatement = null;
         try {
@@ -42,12 +42,13 @@ public class JdbcTemplate {
                 }
             }
             log.info("{} save {}", Thread.currentThread().getName(), arguments);
-            pStatement.executeUpdate();
+            return pStatement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
             DruidUtil.releaseSqlConnection(null, pStatement, connection);
         }
+        return 0;
     }
 
     /**

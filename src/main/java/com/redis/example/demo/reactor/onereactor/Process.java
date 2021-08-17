@@ -28,8 +28,8 @@ public class Process implements Runnable {
     @Override
     public void run() {
         try {
-            System.out.println("sleep 10s");
-            Thread.sleep(10000);
+            System.out.println("sleep 2s");
+            Thread.sleep(2000);
             System.out.println("process thread:" + Thread.currentThread().getName());
             String message = new String(byteBuffer.array(), StandardCharsets.UTF_8);
             System.out.println(socketChannel.getRemoteAddress() + "发来的消息是:" + message);

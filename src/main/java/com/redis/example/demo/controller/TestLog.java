@@ -20,6 +20,7 @@ public class TestLog {
         log.info("this is info");
         log.warn("this is warn");
         log.error("this is err");
+        log.debug("this is debug");
 
     }
 }

@@ -7,19 +7,24 @@ package com.redis.example.demo;
 import com.alibaba.excel.EasyExcel;
 import com.redis.example.demo.druid.BeanHandler;
 import com.redis.example.demo.druid.JdbcTemplate;
-import com.redis.example.demo.druid.domain.Account;
 import com.redis.example.demo.druid.domain.IndicatorDTO;
 import com.redis.example.demo.utils.DateTimeUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DateFormatUtils;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
 /**
+ * 指标数据生成，指标关系生成，指标excel文件生成
+ * 造数据
+ * UPDATE hospital_indicator_month_result  SET indicator_num = ROUND( RAND() * 100 ) WHERE indicator_code IN ( SELECT indicator_code FROM hospital_indicator_info WHERE template_code = '8' AND `level` = 2);
  * @author xuleyan
  * @version GenerateSql.java, v 0.1 2020-12-01 3:17 下午
  */
@@ -38,78 +43,97 @@ public class IndicatorGenerateSql {
     /**
      * 时间类型：month,year,quarter
      */
-    private static final String type = "year";
     private static String indicatorUnit = "个";
     /**
      * 模板类型：1:普通类型2:舒心就医,3:健康运行,4:财务大屏,5:流感监测,6:合理用药,7:最多跑一次,8:卫生资源,9:健康管理,10:医疗质量,11:医改监测
      */
-    private static String templateCode = "8";
-    private static String title = "测试指标";
-    private static String[] sonTitleArr = {"管理人员123123", "专业技术人员46534354"};
-    /**
-     * runMany需要填写
-     */
-//    String[] hospitalList = {"区一院", "区二院", "区三院", "区中院", "区五院", "区妇保", "区良渚"};
-    String[] hospitalList = {"上年末", "本年末"};
+    private static String templateCode = "1";
+
+    private StringBuilder resultIndicatorBuilder = new StringBuilder();
+    private StringBuilder resultRelationBuilder = new StringBuilder();
 
     public static void main(String[] args) {
         IndicatorGenerateSql generateSql = new IndicatorGenerateSql();
-//        generateSql.runMany();
-        generateSql.runSingle();
 
-        // 生成一个IndicatorCode,IndicatorName的列表给数据
-        // SELECT parent_code,indicator_code,indicator_name FROM hospital_indicator_info WHERE template_code = '10';
+        String title = "冠疫苗数";
+        String type = "year";
+        String[] sonTitleArr = {"今日新冠疫苗数", "累计新冠疫苗数"};
+        generateSql.runSingle(sonTitleArr, title, type);
 
-        // 造数据
-        // UPDATE hospital_indicator_month_result  SET indicator_num = ROUND( RAND() * 100 ) WHERE indicator_code IN ( SELECT indicator_code FROM hospital_indicator_info WHERE template_code = '8' AND `level` = 2);
-    }
+//        String title2 = "药品管理";
+//        String[] sonTitleArr2 = {"药品差价","药品差价率","中药饮片差价","中药饮片差价率"};
+//        String type2 = "year";
+//        String[] hospitalList = {"区一院", "区二院", "区三院", "区中院", "区五院", "区妇保", "区良渚"};
+//        generateSql.runMany(sonTitleArr2, hospitalList, title2, type2);
 
-    private void runSingle() {
-
-        // 父节点
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(insertStr);
-        List<String> parentCodeList = new ArrayList<>();
-        String parentTitle = title;
-        generateParentAndSon(parentCodeList, stringBuilder, parentTitle);
-        execute(stringBuilder, parentCodeList);
+        String templateTitle = "冠疫苗数";
+        // 执行sql和文件存储
+        generateSql.execute(templateTitle);
+        // 生成excel
+        generateSql.generateExcel(templateTitle);
     }
 
     /**
-     * 分院区
+     * 生成excel文件
      */
-    private void runMany() {
+    private void generateExcel(String title) {
+        String sql = "SELECT parent_code as parentCode,indicator_code as indicatorCode,indicator_name as indicatorName FROM hospital_indicator_info WHERE template_code = ?;";
+        new ExcelThread(templateCode, sql, title).start();
+    }
+
+    /**
+     * 生成单轴的图标信息的sql，只有x轴
+     */
+    private void runSingle(String[] sonTitleArr, String parentTitle, String type) {
+
+        StringBuilder builder = new StringBuilder();
+        // 父节点
+
+        builder.append(insertStr);
+        List<String> parentCodeList = new ArrayList<>();
+        generateParentAndSon(parentCodeList, builder, parentTitle, sonTitleArr, type);
+
+        resultIndicatorBuilder.append(builder);
+
+        resultRelationBuilder.append(generateRelationSql(parentCodeList));
+    }
+
+    /**
+     * 生成多轴的图标信息的sql, 图标既有x轴也有y轴 分院区
+     */
+    private void runMany(String[] sonTitleArr, String[] hospitalList, String title, String type) {
         // 父节点
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(insertStr);
         List<String> parentCodeList = new ArrayList<>();
         for (String hospital : hospitalList) {
             String parentTitle = title + "-" + hospital;
-            generateParentAndSon(parentCodeList, stringBuilder, parentTitle);
+            generateParentAndSon(parentCodeList, stringBuilder, parentTitle, sonTitleArr, type);
         }
-        execute(stringBuilder, parentCodeList);
+
+        resultIndicatorBuilder.append(stringBuilder);
+
+        resultRelationBuilder.append(generateRelationSql(parentCodeList));
     }
 
-    private void generateParentAndSon(List<String> parentCodeList, StringBuilder stringBuilder, String parentTitle) {
+    private void generateParentAndSon(List<String> parentCodeList, StringBuilder stringBuilder, String parentTitle, String[] sonTitleArr, String type) {
         String parentCode = generateCode();
         parentCodeList.add(parentCode);
-        stringBuilder.append(generateParentLine(parentCode, parentTitle));
+        stringBuilder.append(generateParentLine(parentCode, parentTitle, type));
 
         // 使子节点有排序
         int sort = 500;
         // 子节点
         for (String sonTitle : sonTitleArr) {
-            stringBuilder.append(generateSonLine(sonTitle, parentCode, sort++));
+            stringBuilder.append(generateSonLine(sonTitle, parentCode, sort++, type));
         }
     }
 
-    private void execute(StringBuilder stringBuilder, final List<String> parentCodeList) {
+    private void execute(String title) {
         // 指标sql存储到文件、执行指标sql
-        new WriteFileThread(replaceComma(stringBuilder).toString(), title).start();
+        new WriteFileThread(replaceComma(resultIndicatorBuilder).toString(), title).start();
         // 关系sql存储到文件、执行关系sql
-        new WriteFileThread(generateRelationSql(parentCodeList), title + "_relation").start();
-        // 生成excel文件
-        new ExcelThread(templateCode).start();
+        new WriteFileThread(replaceComma(resultRelationBuilder).toString(), title + "_relation").start();
     }
 
     /**
@@ -117,7 +141,7 @@ public class IndicatorGenerateSql {
      * @param parentCodeList
      * @return
      */
-    private String generateRelationSql(final List<String> parentCodeList) {
+    private StringBuilder generateRelationSql(final List<String> parentCodeList) {
         StringBuilder relation = new StringBuilder();
         relation.append(relationInsertStr);
 
@@ -125,7 +149,7 @@ public class IndicatorGenerateSql {
             String format = String.format(relationStr, parentCode, datetime, datetime);
             relation.append(format);
         }
-        return replaceComma(relation).toString();
+        return relation;
     }
 
     /**
@@ -160,7 +184,7 @@ public class IndicatorGenerateSql {
         }
     }
 
-    private String generateParentLine(String parentCode, String parentTitle) {
+    private String generateParentLine(String parentCode, String parentTitle, String type) {
         // 第一层
         Integer level = 1;
         // 无需计算
@@ -169,7 +193,7 @@ public class IndicatorGenerateSql {
         return String.format(str, templateCode, level, tag, itemCode, 0, parentCode, parentTitle, indicatorUnit, 500, datetime, type);
     }
 
-    private String generateSonLine(String sonTitle, String parentCode, Integer sort) {
+    private String generateSonLine(String sonTitle, String parentCode, Integer sort, String type) {
         Integer sonLevel = 2;
         // 需要填写
         Integer sonTag = 1;
@@ -188,8 +212,8 @@ public class IndicatorGenerateSql {
     }
 
     class WriteFileThread extends Thread {
-        private String result;
-        private String title;
+        private final String result;
+        private final String title;
 
         public WriteFileThread(String result, String title) {
             this.result = result;
@@ -204,14 +228,17 @@ public class IndicatorGenerateSql {
     }
 
     private class ExcelThread extends Thread {
-        private String templateCode;
-        public ExcelThread(String templateCode) {
+        private final String templateCode;
+        private final String sql;
+        private final String title;
+        public ExcelThread(String templateCode, String sql, String title) {
             this.templateCode = templateCode;
+            this.sql = sql;
+            this.title = title;
         }
 
         @Override
         public void run() {
-            String sql = "SELECT parent_code as parentCode,indicator_code as indicatorCode,indicator_name as indicatorName FROM hospital_indicator_info WHERE template_code = ?;";
             List<IndicatorDTO> indicatorDTOList = JdbcTemplate.query(sql, new BeanHandler<>(IndicatorDTO.class), templateCode);
             EasyExcel.write(path + title + ".xlsx", IndicatorDTO.class).sheet("模板").doWrite(indicatorDTOList);
         }

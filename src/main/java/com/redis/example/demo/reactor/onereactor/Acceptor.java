@@ -31,8 +31,8 @@ public class Acceptor implements Runnable {
             System.out.println("有客户端连接上来了," + socketChannel.getRemoteAddress());
             socketChannel.configureBlocking(false);
             SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_READ);
-            selectionKey.attach(new WorkerHandlerThreadPool(socketChannel));
-//            selectionKey.attach(new WorkHandler(socketChannel));
+//            selectionKey.attach(new WorkerHandlerThreadPool(socketChannel));
+            selectionKey.attach(new WorkHandler(socketChannel));
         } catch (IOException e) {
             e.printStackTrace();
         }

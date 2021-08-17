@@ -49,7 +49,6 @@ public class DateTimeUtils {
         String stopTime = format.format(condition.get("stopTime"));
         System.out.println(startTime + "-" + stopTime);
 
-
     }
 
     /**
@@ -223,5 +222,24 @@ public class DateTimeUtils {
         }
         SimpleDateFormat sdf = new SimpleDateFormat(pattern);
         return sdf.format(date);
+    }
+
+    /**
+     * @param date 日期
+     * @param x         小时
+     * @return
+     */
+    public static Date addDate(Date date, int x) {
+        //24小时制
+
+        if (date == null) {
+            return null;
+        }
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.DAY_OF_MONTH, x);
+        date = cal.getTime();
+        cal = null;
+        return date;
     }
 }

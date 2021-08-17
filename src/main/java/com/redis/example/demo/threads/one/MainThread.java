@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -34,6 +35,8 @@ public class MainThread {
 
         for (int i = 0; i < 2; i++) {
             threadPoolExecutor.execute(new ProcThread(i, null));
+//            Future<?> submit = threadPoolExecutor.submit(new ProcThread(i, null));
+//            Object o = submit.get();
         }
 
         threadPoolExecutor.shutdown();

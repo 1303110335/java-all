@@ -4,7 +4,6 @@
  */
 package com.redis.example.demo.druid.util;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import lombok.extern.slf4j.Slf4j;
 

@@ -13,6 +13,10 @@ public class MyClassLoaderTest {
     public static void main(String[] args) throws Exception {
         // 指定类加载器加载调用
         MyClassLoader classLoader = new MyClassLoader();
-        classLoader.loadClass("com.redis.example.demo.controller.Test").getMethod("test").invoke(null);
+        //classLoader.loadClass("com.redis.example.demo.controller.Test").getMethod("test").invoke(null);
+
+
+        classLoader.loadClass("com.redis.example.demo.dynamicproxy.asm.Programmer")
+                .getMethod("code").invoke(null);
     }
 }

@@ -17,4 +17,8 @@ public class Test {
         System.out.println("加载我的classLoader：" + classLoader);
         System.out.println("classLoader.parent：" + classLoader.getParent());
     }
+
+    public static void test() {
+        System.out.println("test");
+    }
 }

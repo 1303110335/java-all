@@ -35,8 +35,15 @@ public class AccountDAOImpl implements IAccountDAO {
     }
 
     @Override
+    public int updateGoods(Integer id) {
+        String sql = "update t_account set goods = goods - 1 where goods > 0 and id = ?";
+        Object[] args = new Object[] {id};
+        return JdbcTemplate.update(sql, args);
+    }
+
+    @Override
     public Account get(Long id) {
-        String sql = "SELECT id, name, age, phone, address FROM t_account WHERE id = ?";
+        String sql = "SELECT id, name, age, phone, address, goods FROM t_account WHERE id = ?";
         List<Account> accountList = JdbcTemplate.query(sql, new BeanHandler<>(Account.class), id);
         if (CollectionUtils.isEmpty(accountList)) {
             return new Account();
@@ -46,7 +53,7 @@ public class AccountDAOImpl implements IAccountDAO {
 
     @Override
     public List<Account> list() {
-        String sql = "SELECT id, name, age, phone, address FROM t_account";
+        String sql = "SELECT id, name, age, phone, address,goods FROM t_account";
         return JdbcTemplate.query(sql, new BeanHandler<>(Account.class));
     }
 

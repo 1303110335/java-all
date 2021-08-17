@@ -20,6 +20,12 @@ public interface IAccountDAO {
 
     void update(Account account);
 
+    /**
+     * 更新商品数量，不能小于1
+     * @param id
+     */
+    int updateGoods(Integer id);
+
     Account get(Long id);
 
     List<Account> list();
