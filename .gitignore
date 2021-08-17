@@ -18,6 +18,13 @@ target/
 *.iws
 *.iml
 *.ipr
+*.jpeg
+*.pdf
+*.hprof
+*.class
+*.log
+.DS_Store
+logs
 
 ### NetBeans ###
 /nbproject/private/
