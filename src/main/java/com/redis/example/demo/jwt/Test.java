@@ -14,10 +14,14 @@ import org.apache.commons.codec.binary.Base64;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 尝试使用jwt
+ * JSON Web Token 是什么？
+ * JSON Web Token (JWT)是一个开放标准(RFC 7519)，它定义了一种紧凑的、自包含的方式，用于作为JSON对象在各方之间安全地传输信息。
+ * 该信息可以被验证和信任，因为它是数字签名的。
+ *
  *
  * @author xuleyan
  * @version Test.java, v 0.1 2021-08-18 6:34 上午
@@ -44,9 +48,12 @@ public class Test {
         builder.setId("1").setSubject("jwt").setIssuer(USER_NAME).setIssuedAt(now).signWith(signatureAlgorithm, key).setExpiration(expDate).addClaims(map);
 
         String token = builder.compact();
+        System.out.println("token = " + token);
         Claims claims = null;
         // 解析token内容
         try {
+            // 签名必须和内容匹配才能解析
+            // 且不能过期
             claims = parseJWT(token);
             Object username= claims.get("username");
             Object password= claims.get("password");
