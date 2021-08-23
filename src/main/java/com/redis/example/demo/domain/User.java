@@ -5,6 +5,8 @@
 package com.redis.example.demo.domain;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.google.common.base.Objects;
+import com.google.common.collect.ComparisonChain;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,7 +20,7 @@ import java.util.function.Function;
  */
 @Slf4j
 @Data
-public class User implements Comparable<User> {
+public class User implements Comparable<User>, Cloneable {
 
     private Integer id;
 
@@ -79,15 +81,27 @@ public class User implements Comparable<User> {
         this.password = password;
     }
 
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
     @Override
     public int compareTo(User other) {
-        if (other == null) {
-            return 1;
-        }
-        if (this.getAge().equals(other.getAge())) {
-            return 0;
-        }
-        // 注意这里的this是新增的节点，other是老的节点，比较之后，返回1，则放在后面，由于PriorityQueue是最小堆
-        return this.getAge() > other.getAge() ? 1 : -1;
+//        if (other == null) {
+//            return 1;
+//        }
+//        if (this.getAge().equals(other.getAge())) {
+//            return 0;
+//        }
+//        // 注意这里的this是新增的节点，other是老的节点，比较之后，返回1，则放在后面，由于PriorityQueue是最小堆
+//        return this.getAge() > other.getAge() ? 1 : -1;
+
+        return ComparisonChain.start()
+                .compare(this.age, other.age)
+                .compare(this.id, other.id)
+                .compare(this.mobile, other.mobile)
+                .result();
     }
 }
