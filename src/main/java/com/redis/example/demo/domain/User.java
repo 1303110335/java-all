@@ -4,14 +4,12 @@
  */
 package com.redis.example.demo.domain;
 
-import com.alibaba.fastjson.annotation.JSONField;
-import com.google.common.base.Objects;
 import com.google.common.collect.ComparisonChain;
 import lombok.Data;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.validation.constraints.NotBlank;
-import java.util.function.Function;
 
 /**
  *
@@ -20,6 +18,7 @@ import java.util.function.Function;
  */
 @Slf4j
 @Data
+@ToString
 public class User implements Comparable<User>, Cloneable {
 
     private Integer id;
